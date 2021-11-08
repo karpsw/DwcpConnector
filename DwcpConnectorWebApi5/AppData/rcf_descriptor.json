@@ -1,0 +1,30 @@
+{
+  "connectors": [
+       {
+            "name": "My Connector X01",
+            "version": "1.0",
+            "type": "com.example.my.connector",
+            "path": "myconnectorx01",
+            "capabilities": [
+                "com.bmc.dsm.catalog:catalogProvider",
+                "com.bmc.dsm.catalog:categoryProvider",
+                "com.bmc.dsm.catalog:datasetProvider",
+                "com.bmc.dsm.catalog:queryableDatasetProvider",
+                "com.bmc.dsm.catalog:tableDatasetProvider",
+                "com.bmc.dsm.catalog:activityProvider",
+                "com.bmc.dsm.catalog:activityLogProvider",
+                "com.bmc.dsm.catalog:approvalProvider",
+                "com.bmc.dsm.catalog:assetProvider",
+                "com.bmc.dsm.catalog:declinesBackgroundPolling"
+            ],
+            "activeConnectionInstances": [
+               {
+                    "id": "DEV",
+                    "name": "Development"
+               }
+            ],
+            "actions": []
+
+      }
+  ]
+}
