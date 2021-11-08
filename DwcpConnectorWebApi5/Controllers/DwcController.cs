@@ -50,8 +50,24 @@ namespace DwcpConnectorWebApi5.Controllers
         [Route("{connector_path}/com.bmc.dsm.catalog:getServices")]
         public GetServiceResponseModel GetServices([FromBody] GetServiceRequestModel request)
         {
+            if (!string.IsNullOrWhiteSpace(request.Request?.ServiceId)) {
+                return new GetServiceResponseModel()
+                {
+                    Response = new GetServiceResponseModel.ResponseModel()
+                    {
+                        Services = Enumerable.Range(1, 5).Select(index => 
+                            new GetServiceResponseModel.ResponseModel.ServicesModel(){ 
+                                Id=$"x{index}", DisplayId= $"x{index}", Description=$"this X{index} srv desc", Excerpt= $"Except x{index}", Name=$"Name x{index}",
+                                LogoUri=$"logo{index}.jpg", CategoryIds=new[] { $"c{index}", $"c2{index}" },Tags=new[] { $"t{index}", $"t2{index}" },
+                                Cost=new GetServiceResponseModel.ResponseModel.ServicesModel.CostClass() {  Amount=2+index, Currency="USD"}
+                            }
+                        ).ToList()
+                    }
+                };
+            }
+
             return new GetServiceResponseModel() {  Response=new GetServiceResponseModel.ResponseModel() { Services=new List<GetServiceResponseModel.ResponseModel.ServicesModel>() { 
-                new GetServiceResponseModel.ResponseModel.ServicesModel(){ Id="x1", DisplayId="x1", Description="this X1 srv", Excerpt="Except x1", Name="Name x1"}
+                new GetServiceResponseModel.ResponseModel.ServicesModel(){ Id="x1", DisplayId="x1", Description="this X1 srv desc", Excerpt="Except x1", Name="Name x1"}
             } } };
         }
 

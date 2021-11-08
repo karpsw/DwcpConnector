@@ -9,11 +9,8 @@ namespace DwcpConnectorWebApi5.Models.Bmc
         public string ConnectionInstanceId { get; set; }
     }
     
-    public class CheckHealthResponseModel
+    public class CheckHealthResponseModel : ConnectionInstanceRequestModel
     {
-
-        [JsonProperty("connectionInstanceId")]
-        public string ConnectionInstanceId { get; set; }
 
         [JsonProperty("response")]
         public ResponseBase Response { get; set; } = new ResponseBase();
