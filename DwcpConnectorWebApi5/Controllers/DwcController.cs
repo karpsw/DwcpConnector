@@ -50,6 +50,7 @@ namespace DwcpConnectorWebApi5.Controllers
         [Route("{connector_path}/com.bmc.dsm.catalog:getServices")]
         public GetServicesResponseModel GetServices([FromBody] GetServicesRequestModel request)
         {
+<<<<<<< HEAD
            
             return new GetServicesResponseModel() {  Response=new GetServicesResponseModel.ResponseModel() { Services=new List<GetServicesResponseModel.ResponseModel.ServicesModel>() { 
                 new GetServicesResponseModel.ResponseModel.ServicesModel(){ Id="x1", DisplayId="x1", Description="this X1 srv desc", Excerpt="Except x1", Name="Name x1"}
@@ -100,6 +101,55 @@ namespace DwcpConnectorWebApi5.Controllers
             }
 
             return null;
+=======
+         
+
+            return new GetServicesResponseModel() {  Response=new GetServicesResponseModel.ResponseModel() { Services=new List<GetServicesResponseModel.ResponseModel.ServicesModel>() { 
+                new GetServicesResponseModel.ResponseModel.ServicesModel(){ Id="x1", DisplayId="x1", Description="this X1 srv desc", Excerpt="Except x1", Name="Name x1"}
+            } } };
+        }
+        
+        [HttpPost]
+        [Route("{connector_path}/com.bmc.dsm.catalog:getService")]
+        public GetServiceResponseModel GetService([FromBody] GetServiceRequestModel request)
+        {
+                return new GetServiceResponseModel()
+                {
+                    Response = new GetServiceResponseModel.ResponseModel()
+                    {
+                        Services = Enumerable.Range(1, 5).Select(index => 
+                            new GetServiceResponseModel.ResponseModel.ServiceModel(){ 
+                                Id=$"x{index}", DisplayId= $"x{index}", Description=$"this X{index} srv desc", Excerpt= $"Except x{index}", Name=$"Name x{index}",
+                                LogoUri=$"logo{index}.jpg", CategoryIds=new[] { $"c{index}", $"c2{index}" },Tags=new[] { $"t{index}", $"t2{index}" },
+                                Cost=new GetServiceResponseModel.ResponseModel.ServiceModel.CostClass() {  Amount=2+index, Currency="USD"}
+                            }
+                        ).ToList()
+                    }
+                };
+            
+ 
+        }
+        
+        [HttpPost]
+        [Route("{connector_path}/com.bmc.dsm.catalog:getContent")]
+        public GetServiceResponseModel GetService([FromBody] GetServiceRequestModel request)
+        {
+                return new GetServiceResponseModel()
+                {
+                    Response = new GetServiceResponseModel.ResponseModel()
+                    {
+                        Services = Enumerable.Range(1, 5).Select(index => 
+                            new GetServiceResponseModel.ResponseModel.ServiceModel(){ 
+                                Id=$"x{index}", DisplayId= $"x{index}", Description=$"this X{index} srv desc", Excerpt= $"Except x{index}", Name=$"Name x{index}",
+                                LogoUri=$"logo{index}.jpg", CategoryIds=new[] { $"c{index}", $"c2{index}" },Tags=new[] { $"t{index}", $"t2{index}" },
+                                Cost=new GetServiceResponseModel.ResponseModel.ServiceModel.CostClass() {  Amount=2+index, Currency="USD"}
+                            }
+                        ).ToList()
+                    }
+                };
+            
+ 
+>>>>>>> 04b372038c6a6025c72d668604002ac0b2bb440d
         }
 
 
