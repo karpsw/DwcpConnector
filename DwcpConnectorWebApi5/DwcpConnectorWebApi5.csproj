@@ -12,4 +12,8 @@
   <ItemGroup>
     <None Include="appsettings.Production.json" CopyToPublishDirectory="Always" />
   </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\DwcpConnector.Services\DwcpConnector.Services.csproj" />
+  </ItemGroup>
 </Project>

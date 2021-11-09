@@ -1,4 +1,6 @@
-﻿using DwcpConnectorWebApi5.Models.Bmc;
+﻿using DwcpConnector.Services.Models.Bmc;
+using DwcpConnector.Services.Services;
+using DwcpConnectorWebApi5.Models.Bmc;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -16,24 +18,21 @@ namespace DwcpConnectorWebApi5.Controllers
         
 
         private readonly ILogger<WeatherForecastController> _logger;
-        private readonly IWebHostEnvironment _hostingEnvironment;
+        private readonly IDwcService _dwcService;
         public DwcController(ILogger<WeatherForecastController> logger,
-            IWebHostEnvironment hostingEnvironment)
+            IDwcService dwcService
+            )
         {
             _logger = logger;
-            _hostingEnvironment = hostingEnvironment;
+            _dwcService = dwcService;
         } 
 
         [HttpGet]
         [Route("rcf/descriptor")]
-        public IActionResult GetRcfDescriptor()
+        public async RcfDescriptorResponseModel GetRcfDescriptor()
         {
-            var path = System.IO.Path.Combine(_hostingEnvironment.ContentRootPath, "AppData", "rcf_descriptor.json");
-            if (System.IO.File.Exists(path))
-            {
-                return Content(System.IO.File.ReadAllText(path), "application/json");
-            }
-            return Ok($"Not found {path}");
+            return await _dwcService.GetRcfDescriptor();
+
         }
 
 
