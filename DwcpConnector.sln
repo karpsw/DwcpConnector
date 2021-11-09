@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31729.503
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31825.309
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DwcpConnectorWebApi5", "DwcpConnectorWebApi5\DwcpConnectorWebApi5.csproj", "{61FD7918-9B1A-4F36-AB3A-4E8336E03962}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{9CC0EE93-5E29-4859-AF24-9F4E420075F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DwcpConnector.Services", "DwcpConnector.Services\DwcpConnector.Services.csproj", "{BC5317A4-9F51-458B-909C-A2F824660220}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{61FD7918-9B1A-4F36-AB3A-4E8336E03962}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{61FD7918-9B1A-4F36-AB3A-4E8336E03962}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{61FD7918-9B1A-4F36-AB3A-4E8336E03962}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CC0EE93-5E29-4859-AF24-9F4E420075F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CC0EE93-5E29-4859-AF24-9F4E420075F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CC0EE93-5E29-4859-AF24-9F4E420075F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CC0EE93-5E29-4859-AF24-9F4E420075F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC5317A4-9F51-458B-909C-A2F824660220}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC5317A4-9F51-458B-909C-A2F824660220}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC5317A4-9F51-458B-909C-A2F824660220}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC5317A4-9F51-458B-909C-A2F824660220}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
